@@ -30,39 +30,39 @@ class _HomeState extends State<Home> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          
+          iconTheme: IconThemeData(color: Colors.white),
           title: CustomText(
-            text: 'BroChat',
-            size: 18,
-            weight: FontWeight.w800,
+            text: 'B r o C h a t',
+            size: 20,
+            weight: FontWeight.w700,
           ),
           // leading: Icon(Icons.message, color: Colors.white),
-          actions: [
-            IconButton(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Profile(),));
-                }, 
-                icon: Icon(Icons.person, color: Colors.white)),
-            IconButton(
-                onPressed: () {
-                  showDialog(context: context, builder: (context) {
-                        return AlertDialog(
-                          title: CustomText(text: 'LogOut', size: 20,weight: FontWeight.w600,color: Colors.black,),
-                          content: CustomText(text: 'Are you sure your you want to logout?', size: 16, weight: FontWeight.normal, color: Colors.black),
-                actions: [
-                  TextButton(onPressed: () {
-                    logout();
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => Login(),));
-                  }, child: CustomText(text: 'yes', size: 16, weight: FontWeight.w400, color: Colors.black)),
-                  TextButton(onPressed: () {
-                    Navigator.pop(context);
-                  }, child: CustomText(text: 'no', size: 16, weight: FontWeight.w400, color: Colors.black))
-                ]
-                        );
-                      },);
-                }, 
-                icon: Icon(Icons.logout, color: Colors.white))
-          ],
+          // actions: [
+          //   IconButton(
+          //       onPressed: () {
+          //         Navigator.push(context, MaterialPageRoute(builder: (context) => Profile(),));
+          //       }, 
+          //       icon: Icon(Icons.person, color: Colors.white)),
+          //   IconButton(
+          //       onPressed: () {
+          //         showDialog(context: context, builder: (context) {
+          //               return AlertDialog(
+          //                 title: CustomText(text: 'LogOut', size: 20,weight: FontWeight.w600,color: Colors.black,),
+          //                 content: CustomText(text: 'Are you sure your you want to logout?', size: 16, weight: FontWeight.normal, color: Colors.black),
+          //       actions: [
+          //         TextButton(onPressed: () {
+          //           logout();
+          //           Navigator.push(context, MaterialPageRoute(builder: (context) => Login(),));
+          //         }, child: CustomText(text: 'yes', size: 16, weight: FontWeight.w400, color: Colors.black)),
+          //         TextButton(onPressed: () {
+          //           Navigator.pop(context);
+          //         }, child: CustomText(text: 'no', size: 16, weight: FontWeight.w400, color: Colors.black))
+          //       ]
+          //               );
+          //             },);
+          //       }, 
+          //       icon: Icon(Icons.logout, color: Colors.white))
+          // ],
           backgroundColor: Color(0xFF009688),
         ),
         drawer: Mydrawer(),

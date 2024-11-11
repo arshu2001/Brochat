@@ -1,11 +1,21 @@
+import 'package:demo1/controller/login_controller.dart';
+import 'package:demo1/view/login.dart';
 import 'package:demo1/view/profile.dart';
 import 'package:demo1/widgents/custom_text.dart';
 import 'package:flutter/material.dart';
 
-class Mydrawer extends StatelessWidget {
+class Mydrawer extends StatefulWidget {
   const Mydrawer({super.key});
 
-  
+  @override
+  State<Mydrawer> createState() => _MydrawerState();
+}
+
+class _MydrawerState extends State<Mydrawer> {
+  void logout(){
+    final _user_loginController = User_LoginController();
+    _user_loginController.signOut();
+  }
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -46,7 +56,23 @@ class Mydrawer extends StatelessWidget {
               title: CustomText(text: 'L o g o u t',size: 18,weight: FontWeight.w700,),
               leading: Icon(Icons.logout),
               onTap: () {
-
+                showDialog(context: context, builder: (context) {
+                        return AlertDialog(
+                          title: CustomText(text: 'LogOut', size: 20,weight: FontWeight.w600,color: Colors.black,),
+                          content: CustomText(text: 'Are you sure your you want to logout?', size: 16, weight: FontWeight.normal, color: Colors.black),
+                actions: [
+                  TextButton(onPressed: () {
+                    logout();
+                    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => Login(),),(route) => false,);
+                    // Navigator.push(context, MaterialPageRoute(builder: (context) => Login(),));
+                    
+                  }, child: CustomText(text: 'yes', size: 16, weight: FontWeight.w400, color: Colors.black)),
+                  TextButton(onPressed: () {
+                    Navigator.pop(context);
+                  }, child: CustomText(text: 'no', size: 16, weight: FontWeight.w400, color: Colors.black))
+                ]
+                        );
+                      },);
               },
             ),
           ),

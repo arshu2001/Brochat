@@ -32,14 +32,14 @@ class _UserForgetPasswordState extends State<UserForgetPassword> {
             )),
       ),
       backgroundColor: Colors.black,
-      body: SafeArea(
-        child: Form(
-          key: _formkey,
+      body: Form(
+        key: _formkey,
+        child: Expanded(
           child: Column(
             children: [
               Padding(
                 padding: const EdgeInsets.only(
-                  top: 150,
+                  top: 100,
                 ),
                 child: Center(
                     child: CustomText(
@@ -85,7 +85,7 @@ class _UserForgetPasswordState extends State<UserForgetPassword> {
               ),
               Spacer(),
               Padding(
-                padding: const EdgeInsets.only(bottom: 50,left: 10),
+                padding: const EdgeInsets.only(bottom: 70,left: 10),
                 child: SizedBox(
                   width: 300,
                   child: ElevatedButton(
